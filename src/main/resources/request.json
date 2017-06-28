@@ -1,0 +1,45 @@
+{
+    "eventId": "Dummy",
+    "eventType": "AggregationTest",
+    "eventProducerId": "AsifTasleem",
+    "eventTime": "2017-03-27T16:20:11.108Z",
+    "eventVersion": "1.0",
+    "specifications": [],
+    "auditInfo": {
+        "customerId": "Customer1",
+        "accountNumber": "Account123",
+        "universalLineId": "U123",
+        "lineId": "123",
+        "phoneNumber": "1234567890",
+        "iamUniqueId": null,
+        "batchId": "Batch0",
+        "orderId": null
+    },
+    "headerReference": {
+        "activityId": "Activation",
+        "applicationId": "Samson",
+        "authCustomerId": "Customer1",
+        "authFinancialAccountId": "FinancialAcc1"
+    },
+    "payload": {
+        "orderSummary": {
+            "orderReason": null,
+            "unSimLineIndicator": false,
+            "orderItem": [{
+                "sku": "Sku2",
+                "imei": "Imei1",
+                "sim": "Sim1"
+            },
+            {
+                "sku": "Sku2",
+                "imei": "Imei2",
+                "sim": "Sim2"
+            }],
+            "orderDelivery": {
+                "carrierName": "UPS",
+                "trackingNumber": "DONTKNOW",
+                "deliveryNumber": "007"
+            }
+        }
+    }
+}
