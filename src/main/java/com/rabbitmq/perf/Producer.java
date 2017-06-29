@@ -188,8 +188,11 @@ ConfirmListener
 		headers.put("__TypeId__", "com.tmobile.deep.model.event.Event");
 
 		AMQP.BasicProperties.Builder builder = new AMQP.BasicProperties.Builder();
-
-		builder.contentType("application/json").priority(0).deliveryMode(2).contentEncoding("UTF-8").headers(headers);
+		if (persistent) {
+			builder.contentType("application/json").priority(0).deliveryMode(2).contentEncoding("UTF-8").headers(headers);
+		}else{
+			builder.contentType("application/json").priority(0).contentEncoding("UTF-8").headers(headers);
+		}
 
 		unconfirmedSet.add(channel.getNextPublishSeqNo());
 		channel.basicPublish(exchangeName, randomRoutingKey ? UUID.randomUUID().toString() : id, mandatory, immediate,
